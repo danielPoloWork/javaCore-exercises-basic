@@ -10,7 +10,7 @@ public class StringToMultidimensionalArray {
     //String[][] sentenceArray = new String[2][sentence.length()];
     //setSentenceArray(sentenceArray, sentence);
 
-    int blanksAmount = doCountBlank(sentence);
+    int blanksAmount = getBlankCount(sentence);
 
     String[][] cleanedSentenceArray = new String[3][sentence.length() - blanksAmount];
     String[][] blanksArray = new String[3][blanksAmount];
@@ -24,7 +24,7 @@ public class StringToMultidimensionalArray {
     System.out.println(Arrays.deepToString(blanksArray));
   }
 
-  private static int doCountBlank(String sentenceArg) {
+  private static int getBlankCount(String sentenceArg) {
    int counter = 0;
    for (int a = 0, b = 0; a < sentenceArg.length(); a++) {
      boolean isBlank = (sentenceArg.charAt(a) == ' ');
